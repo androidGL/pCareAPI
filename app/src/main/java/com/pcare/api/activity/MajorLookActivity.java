@@ -39,7 +39,6 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
     protected MajorLookPresenter bindPresenter() {
         presenter = new MajorLookPresenter((MajorLookActivity) getSelfActivity());
         return presenter;
-
     }
 
     @Override
