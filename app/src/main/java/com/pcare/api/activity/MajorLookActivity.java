@@ -1,10 +1,12 @@
 package com.pcare.api.activity;
 
+import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pcare.api.R;
 import com.pcare.api.base.SimpleBaseActivity;
@@ -12,6 +14,7 @@ import com.pcare.api.contract.MajorLookContarct;
 import com.pcare.api.presenter.MajorLookPresenter;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 /**
@@ -22,8 +25,8 @@ import butterknife.BindView;
 public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> implements MajorLookContarct.View {
 
 
-    @BindView(R.id.look_tip)
-    TextView tip;
+    @BindView(R.id.look_start)
+    TextView start;
 
     @BindView(R.id.look_container)
     TextureView textureView;
@@ -47,6 +50,12 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
         startCamera();
     }
 
+    //点击人脸识别按钮的方法
+    @OnClick(R.id.look_start)
+    public void start(View view){
+
+
+    }
 
     //开启摄像头
     @Override
@@ -70,7 +79,6 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
 
     }
 
-    //生命周期，页面退出时关闭连接
     @Override
     protected void onPause() {
         super.onPause();
